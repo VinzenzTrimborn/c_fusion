@@ -47,21 +47,22 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic_plasmic_rich_components.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic_fusion_lab.module.css"; // plasmic-import: adU29zJd9uLGW9TewABBsV/projectcss
-import sty from "./PlasmicNewPage.module.css"; // plasmic-import: yVO7gSdMDe6r/css
+import sty from "./PlasmicHome.module.css"; // plasmic-import: yVO7gSdMDe6r/css
 
 createPlasmicElementProxy;
 
-export type PlasmicNewPage__VariantMembers = {};
-export type PlasmicNewPage__VariantsArgs = {};
-type VariantPropType = keyof PlasmicNewPage__VariantsArgs;
-export const PlasmicNewPage__VariantProps = new Array<VariantPropType>();
+export type PlasmicHome__VariantMembers = {};
+export type PlasmicHome__VariantsArgs = {};
+type VariantPropType = keyof PlasmicHome__VariantsArgs;
+export const PlasmicHome__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicNewPage__ArgsType = {};
-type ArgPropType = keyof PlasmicNewPage__ArgsType;
-export const PlasmicNewPage__ArgProps = new Array<ArgPropType>();
+export type PlasmicHome__ArgsType = {};
+type ArgPropType = keyof PlasmicHome__ArgsType;
+export const PlasmicHome__ArgProps = new Array<ArgPropType>();
 
-export type PlasmicNewPage__OverridesType = {
+export type PlasmicHome__OverridesType = {
   root?: p.Flex<"div">;
+  section?: p.Flex<"section">;
   navbar?: p.Flex<typeof Navbar>;
   intro?: p.Flex<"div">;
   actionButton?: p.Flex<typeof ActionButton>;
@@ -70,7 +71,7 @@ export type PlasmicNewPage__OverridesType = {
   gltfView?: p.Flex<typeof GltfView>;
 };
 
-export interface DefaultNewPageProps {}
+export interface DefaultHomeProps {}
 
 const $$ = {};
 
@@ -81,10 +82,10 @@ function useNextRouter() {
   return undefined;
 }
 
-function PlasmicNewPage__RenderFunc(props: {
-  variants: PlasmicNewPage__VariantsArgs;
-  args: PlasmicNewPage__ArgsType;
-  overrides: PlasmicNewPage__OverridesType;
+function PlasmicHome__RenderFunc(props: {
+  variants: PlasmicHome__VariantsArgs;
+  args: PlasmicHome__ArgsType;
+  overrides: PlasmicHome__OverridesType;
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
@@ -107,16 +108,16 @@ function PlasmicNewPage__RenderFunc(props: {
     <React.Fragment>
       <Head>
         <meta name="twitter:card" content="summary" />
-        <title key="title">{PlasmicNewPage.pageMetadata.title}</title>
+        <title key="title">{PlasmicHome.pageMetadata.title}</title>
         <meta
           key="og:title"
           property="og:title"
-          content={PlasmicNewPage.pageMetadata.title}
+          content={PlasmicHome.pageMetadata.title}
         />
         <meta
           key="twitter:title"
           name="twitter:title"
-          content={PlasmicNewPage.pageMetadata.title}
+          content={PlasmicHome.pageMetadata.title}
         />
       </Head>
 
@@ -143,6 +144,12 @@ function PlasmicNewPage__RenderFunc(props: {
             sty.root
           )}
         >
+          <section
+            data-plasmic-name={"section"}
+            data-plasmic-override={overrides.section}
+            className={classNames(projectcss.all, sty.section)}
+          />
+
           <Navbar
             data-plasmic-name={"navbar"}
             data-plasmic-override={overrides.navbar}
@@ -321,6 +328,7 @@ function PlasmicNewPage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "section",
     "navbar",
     "intro",
     "actionButton",
@@ -328,6 +336,7 @@ const PlasmicDescendants = {
     "vote",
     "gltfView"
   ],
+  section: ["section"],
   navbar: ["navbar"],
   intro: ["intro", "actionButton"],
   actionButton: ["actionButton"],
@@ -340,6 +349,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  section: "section";
   navbar: typeof Navbar;
   intro: "div";
   actionButton: typeof ActionButton;
@@ -350,18 +360,18 @@ type NodeDefaultElementType = {
 
 type ReservedPropsType = "variants" | "args" | "overrides";
 type NodeOverridesType<T extends NodeNameType> = Pick<
-  PlasmicNewPage__OverridesType,
+  PlasmicHome__OverridesType,
   DescendantsType<T>
 >;
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
-    variants?: PlasmicNewPage__VariantsArgs;
-    args?: PlasmicNewPage__ArgsType;
+    variants?: PlasmicHome__VariantsArgs;
+    args?: PlasmicHome__ArgsType;
     overrides?: NodeOverridesType<T>;
-  } & Omit<PlasmicNewPage__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
+  } & Omit<PlasmicHome__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     /* Specify args directly as props*/ Omit<
-      PlasmicNewPage__ArgsType,
+      PlasmicHome__ArgsType,
       ReservedPropsType
     > &
     /* Specify overrides for each element directly as props*/ Omit<
@@ -383,12 +393,12 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         deriveRenderOpts(props, {
           name: nodeName,
           descendantNames: PlasmicDescendants[nodeName],
-          internalArgPropNames: PlasmicNewPage__ArgProps,
-          internalVariantPropNames: PlasmicNewPage__VariantProps
+          internalArgPropNames: PlasmicHome__ArgProps,
+          internalVariantPropNames: PlasmicHome__VariantProps
         }),
       [props, nodeName]
     );
-    return PlasmicNewPage__RenderFunc({
+    return PlasmicHome__RenderFunc({
       variants,
       args,
       overrides,
@@ -396,18 +406,19 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
     });
   };
   if (nodeName === "root") {
-    func.displayName = "PlasmicNewPage";
+    func.displayName = "PlasmicHome";
   } else {
-    func.displayName = `PlasmicNewPage.${nodeName}`;
+    func.displayName = `PlasmicHome.${nodeName}`;
   }
   return func;
 }
 
-export const PlasmicNewPage = Object.assign(
-  // Top-level PlasmicNewPage renders the root element
+export const PlasmicHome = Object.assign(
+  // Top-level PlasmicHome renders the root element
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    section: makeNodeComponent("section"),
     navbar: makeNodeComponent("navbar"),
     intro: makeNodeComponent("intro"),
     actionButton: makeNodeComponent("actionButton"),
@@ -415,9 +426,9 @@ export const PlasmicNewPage = Object.assign(
     vote: makeNodeComponent("vote"),
     gltfView: makeNodeComponent("gltfView"),
 
-    // Metadata about props expected for PlasmicNewPage
-    internalVariantProps: PlasmicNewPage__VariantProps,
-    internalArgProps: PlasmicNewPage__ArgProps,
+    // Metadata about props expected for PlasmicHome
+    internalVariantProps: PlasmicHome__VariantProps,
+    internalArgProps: PlasmicHome__ArgProps,
 
     // Page metadata
     pageMetadata: {
@@ -429,5 +440,5 @@ export const PlasmicNewPage = Object.assign(
   }
 );
 
-export default PlasmicNewPage;
+export default PlasmicHome;
 /* prettier-ignore-end */
