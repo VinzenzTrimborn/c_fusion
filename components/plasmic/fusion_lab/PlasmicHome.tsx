@@ -37,10 +37,11 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: lwEnvYluELlC/component
-import ActionButton from "../../ActionButton"; // plasmic-import: x_Fghcos84Ui/component
-import ProposalCard from "../../ProposalCard"; // plasmic-import: 13bqDO-cKM5b/component
-import VotingCard from "../../VotingCard"; // plasmic-import: oAGE1uzhgryh/component
-import GltfView from "../../GltfView"; // plasmic-import: 2gypwESdRVuN/component
+import Header from "../../Header"; // plasmic-import: iV9ipicgvWtS/component
+import AboutUs from "../../AboutUs"; // plasmic-import: IwB4ixeF6-I9/component
+import CommentCloudSection from "../../CommentCloudSection"; // plasmic-import: NG6kf33f9FmD/component
+import Team from "../../Team"; // plasmic-import: SnzWAy89iw5m/component
+import FaqSection from "../../FaqSection"; // plasmic-import: Qhhf4YZ2QDy9/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -64,11 +65,11 @@ export type PlasmicHome__OverridesType = {
   root?: p.Flex<"div">;
   section?: p.Flex<"section">;
   navbar?: p.Flex<typeof Navbar>;
-  intro?: p.Flex<"div">;
-  actionButton?: p.Flex<typeof ActionButton>;
-  projectSelection?: p.Flex<"div">;
-  vote?: p.Flex<"div">;
-  gltfView?: p.Flex<typeof GltfView>;
+  header?: p.Flex<typeof Header>;
+  aboutUs?: p.Flex<typeof AboutUs>;
+  commentCloudSection?: p.Flex<typeof CommentCloudSection>;
+  team?: p.Flex<typeof Team>;
+  faqSection?: p.Flex<typeof FaqSection>;
 };
 
 export interface DefaultHomeProps {}
@@ -156,168 +157,34 @@ function PlasmicHome__RenderFunc(props: {
             className={classNames("__wab_instance", sty.navbar)}
           />
 
-          <div
-            data-plasmic-name={"intro"}
-            data-plasmic-override={overrides.intro}
-            className={classNames(projectcss.all, sty.intro)}
-          >
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__zkHqg)}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox__p4X5M)} />
+          <Header
+            data-plasmic-name={"header"}
+            data-plasmic-override={overrides.header}
+            className={classNames("__wab_instance", sty.header)}
+          />
 
-              <div className={classNames(projectcss.all, sty.freeBox__siZfd)}>
-                <div className={classNames(projectcss.all, sty.freeBox__jaGgr)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__n6I7
-                    )}
-                  >
-                    {"Donnersberger\nBr\u00fccke"}
-                  </div>
-                </div>
-              </div>
-              <ActionButton
-                data-plasmic-name={"actionButton"}
-                data-plasmic-override={overrides.actionButton}
-                className={classNames("__wab_instance", sty.actionButton)}
-              />
-            </p.Stack>
-          </div>
-          <p.Stack
-            as={"div"}
-            data-plasmic-name={"projectSelection"}
-            data-plasmic-override={overrides.projectSelection}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.projectSelection)}
-          >
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox___5Ne4N)}
-            >
-              <div className={classNames(projectcss.all, sty.freeBox___5C98F)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rXqv7
-                  )}
-                >
-                  {"Explore the Different Bridge Designs"}
-                </div>
-              </div>
-            </p.Stack>
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__k0EkO)}
-            >
-              <ProposalCard
-                className={classNames(
-                  "__wab_instance",
-                  sty.proposalCard__mcBxV
-                )}
-              />
+          <AboutUs
+            data-plasmic-name={"aboutUs"}
+            data-plasmic-override={overrides.aboutUs}
+            className={classNames("__wab_instance", sty.aboutUs)}
+          />
 
-              <ProposalCard
-                className={classNames("__wab_instance", sty.proposalCard__uiO3)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___1HmJe
-                  )}
-                >
-                  {"Proposal B"}
-                </div>
-              </ProposalCard>
-              <ProposalCard
-                className={classNames("__wab_instance", sty.proposalCard__uf5A)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__p3SfS
-                  )}
-                >
-                  {"Proposal C"}
-                </div>
-              </ProposalCard>
-              <ProposalCard
-                className={classNames(
-                  "__wab_instance",
-                  sty.proposalCard__v78Ut
-                )}
-              >
-                {"Proposal D"}
-              </ProposalCard>
-              <ProposalCard
-                className={classNames(
-                  "__wab_instance",
-                  sty.proposalCard__utOc1
-                )}
-              >
-                {"Proposal E"}
-              </ProposalCard>
-            </p.Stack>
-          </p.Stack>
-          <div
-            data-plasmic-name={"vote"}
-            data-plasmic-override={overrides.vote}
-            className={classNames(projectcss.all, sty.vote)}
-          >
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__haa7O)}
-            >
-              <VotingCard
-                className={classNames("__wab_instance", sty.votingCard__scYcV)}
-                proposalName={"Proposal A"}
-              />
+          <CommentCloudSection
+            data-plasmic-name={"commentCloudSection"}
+            data-plasmic-override={overrides.commentCloudSection}
+            className={classNames("__wab_instance", sty.commentCloudSection)}
+          />
 
-              <VotingCard
-                className={classNames("__wab_instance", sty.votingCard__x7A0)}
-                proposalName={"Proposal B"}
-              />
+          <Team
+            data-plasmic-name={"team"}
+            data-plasmic-override={overrides.team}
+            className={classNames("__wab_instance", sty.team)}
+          />
 
-              <VotingCard
-                className={classNames("__wab_instance", sty.votingCard__zJ9Qw)}
-                proposalName={
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___7R1Md
-                    )}
-                  >
-                    {"Proposal C"}
-                  </div>
-                }
-              />
-
-              <VotingCard
-                className={classNames("__wab_instance", sty.votingCard__uEsEd)}
-                proposalName={"Proposal D"}
-              />
-
-              <VotingCard
-                className={classNames("__wab_instance", sty.votingCard__jpljY)}
-                proposalName={"Proposal E"}
-              />
-            </p.Stack>
-          </div>
-          <GltfView
-            data-plasmic-name={"gltfView"}
-            data-plasmic-override={overrides.gltfView}
-            className={classNames("__wab_instance", sty.gltfView)}
+          <FaqSection
+            data-plasmic-name={"faqSection"}
+            data-plasmic-override={overrides.faqSection}
+            className={classNames("__wab_instance", sty.faqSection)}
           />
         </div>
       </div>
@@ -330,19 +197,19 @@ const PlasmicDescendants = {
     "root",
     "section",
     "navbar",
-    "intro",
-    "actionButton",
-    "projectSelection",
-    "vote",
-    "gltfView"
+    "header",
+    "aboutUs",
+    "commentCloudSection",
+    "team",
+    "faqSection"
   ],
   section: ["section"],
   navbar: ["navbar"],
-  intro: ["intro", "actionButton"],
-  actionButton: ["actionButton"],
-  projectSelection: ["projectSelection"],
-  vote: ["vote"],
-  gltfView: ["gltfView"]
+  header: ["header"],
+  aboutUs: ["aboutUs"],
+  commentCloudSection: ["commentCloudSection"],
+  team: ["team"],
+  faqSection: ["faqSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -351,11 +218,11 @@ type NodeDefaultElementType = {
   root: "div";
   section: "section";
   navbar: typeof Navbar;
-  intro: "div";
-  actionButton: typeof ActionButton;
-  projectSelection: "div";
-  vote: "div";
-  gltfView: typeof GltfView;
+  header: typeof Header;
+  aboutUs: typeof AboutUs;
+  commentCloudSection: typeof CommentCloudSection;
+  team: typeof Team;
+  faqSection: typeof FaqSection;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -420,11 +287,11 @@ export const PlasmicHome = Object.assign(
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
     navbar: makeNodeComponent("navbar"),
-    intro: makeNodeComponent("intro"),
-    actionButton: makeNodeComponent("actionButton"),
-    projectSelection: makeNodeComponent("projectSelection"),
-    vote: makeNodeComponent("vote"),
-    gltfView: makeNodeComponent("gltfView"),
+    header: makeNodeComponent("header"),
+    aboutUs: makeNodeComponent("aboutUs"),
+    commentCloudSection: makeNodeComponent("commentCloudSection"),
+    team: makeNodeComponent("team"),
+    faqSection: makeNodeComponent("faqSection"),
 
     // Metadata about props expected for PlasmicHome
     internalVariantProps: PlasmicHome__VariantProps,
